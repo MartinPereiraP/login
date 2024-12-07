@@ -1,8 +1,12 @@
 <?php
-    require_once("c://xampp/htdocs/login/view/head/head.php");
-    if(!empty($_SESSION['usuario'])){
-        header("Location:panel_control.php");
-    }
+// view/home/login.php
+// Incluir la configuración global
+require_once __DIR__ . '/../../config/app.php';
+
+require_once base_path('view/head/head.php');
+if (!empty($_SESSION['usuario'])) {
+    header("Location:panel_control.php");
+}
 ?>
 
 <div class="fondo-login">
@@ -28,11 +32,11 @@
             </div>
             <input type="password" name="password" class="form-control" id="password">
         </div>
-        <?php if(!empty($_GET['erro'])):?>
+        <?php if (!empty($_GET['erro'])): ?>
             <div id="alertError" style="margin: auto;" class="alert alert-danger mb-2" role="alert">
-                <?= !empty($_GET['error']) ? $_GET['error'] : ""?>
+                <?= !empty($_GET['error']) ? $_GET['error'] : "" ?>
             </div>
-        <?php endif;?>
+        <?php endif; ?>
         <div class="d-grid gap-2">
             <button type="submit" class="btn btn-primary">Login</button>
         </div>
@@ -43,5 +47,5 @@
 </div>
 
 <?php
-    require_once("c://xampp/htdocs/login/view/head/footer.php");
+require_once base_path('view/head/footer.php');
 ?>
