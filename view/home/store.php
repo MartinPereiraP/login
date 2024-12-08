@@ -20,7 +20,7 @@ if (empty($correo) && empty($contraseña) && empty($confirmarContraseña)) {
             header("Location:login.php");
         }
     } else {
-        $error .= "<li>Las contraseñas son iguales</li>";
+        $error .= "<li>Las contraseñas no coinciden</li>";
         header("Location:signup.php?error=" . $error . "&&correo=" . $correo . "&&contraseña=" . $contraseña . "&&confirmarContraseña=" . $confirmarContraseña);
     }
 }
