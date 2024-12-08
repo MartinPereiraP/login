@@ -14,7 +14,7 @@ if (empty($correo) && empty($contraseña) && empty($confirmarContraseña)) {
 } else if ($correo || $contraseña || $confirmarContraseña) {
     if ($contraseña == $confirmarContraseña) {
         if ($obj->guardarUsuario($correo, $contraseña) == false) {
-            $error .= "<li>Correo agregado</li>";
+            $error .= "<li>No se pudo guardar el usuario</li>";
             header("Location:signup.php?error=" . $error . "&&correo=" . $correo . "&&contraseña=" . $contraseña . "&&confirmarContraseña=" . $confirmarContraseña);
         } else {
             header("Location:login.php");
