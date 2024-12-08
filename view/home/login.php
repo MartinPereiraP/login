@@ -18,7 +18,7 @@ if (!empty($_SESSION['usuario'])) {
     <div class="titulo">
         Inicia sesion en DogCom
     </div>
-    <form action="verificar.php" method="POST" class="col-3 login" autocomplete="off">
+    <form action="/view/home/verificar.php" method="POST" class="col-3 login" autocomplete="off">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" name="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -32,7 +32,7 @@ if (!empty($_SESSION['usuario'])) {
             </div>
             <input type="password" name="password" class="form-control" id="password">
         </div>
-        <?php if (!empty($_GET['erro'])): ?>
+        <?php if (!empty($_GET['error'])): ?>
             <div id="alertError" style="margin: auto;" class="alert alert-danger mb-2" role="alert">
                 <?= !empty($_GET['error']) ? $_GET['error'] : "" ?>
             </div>
