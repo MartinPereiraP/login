@@ -4,7 +4,7 @@ class db
     private $host = "localhost";
     private $dbname = "login";
     private $user = "root";
-    private $password = "9884";
+    private $password = "";
 
     /**
      * Funcion para conectar a la base de datos
