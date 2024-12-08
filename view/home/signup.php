@@ -20,8 +20,14 @@ if (!empty($_SESSION['usuario'])) {
     <form action="/view/home/store.php" method="POST" class="col-3 login" autocomplete="off">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" name="correo" value="<?= (!empty($_GET['correo'])) ? $_GET['correo'] : "" ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico">
+            <input type="email" name="correo" value="<?= (!empty($_GET['correo'])) ? $_GET['correo'] : "" ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico" require>
         </div>
+
+        <div class="mb-3">
+            <label form="exampleInputRut" class="form-label">Rut</label>
+            <input type="text" name="rut" value="<?= (!empty($_GET['rut'])) ? $_GET['rut'] : "" ?>" class="form-control" id="exampleInputRut" aria-describedby="rutHelp" placeholder="Ingrese su RUT (Ej: 15325419-K)" required pattern="\d{7,8}-[0-9kK]" title="Ingrese un RUT válido">
+        </div>
+
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <div class="box-eye">
@@ -29,7 +35,7 @@ if (!empty($_SESSION['usuario'])) {
                     <i id="eyepassword" class="fa-solid fa-eye changePassword"></i>
                 </button>
             </div>
-            <input type="password" name="contraseña" value="<?= (!empty($_GET['contraseña'])) ? $_GET['contraseña'] : "" ?>" class="form-control" id="password" placeholder="Ingese su Contraseña">
+            <input type="password" name="contraseña" value="<?= (!empty($_GET['contraseña'])) ? $_GET['contraseña'] : "" ?>" class="form-control" id="password" placeholder="Ingese su Contraseña" require>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Repeat the password</label>
@@ -38,7 +44,7 @@ if (!empty($_SESSION['usuario'])) {
                     <i id="eyepassword2" class="fa-solid fa-eye changePassword"></i>
                 </button>
             </div>
-            <input type="password" name="confirmarContraseña" value="<?= (!empty($_GET['confirmarContraseña'])) ? $_GET['confirmarContraseña'] : "" ?>" class="form-control" id="password2" placeholder="Repita su Contraseña">
+            <input type="password" name="confirmarContraseña" value="<?= (!empty($_GET['confirmarContraseña'])) ? $_GET['confirmarContraseña'] : "" ?>" class="form-control" id="password2" placeholder="Repita su Contraseña" require>
         </div>
         <?php if (!empty($_GET['error'])): ?>
             <div id="alertError" style="margin: auto;" class="alert alert-danger mb-2" role="alert">
