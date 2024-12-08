@@ -30,7 +30,7 @@ if (!empty($_SESSION['usuario'])) {
                     <i id="eyepassword" class="fa-solid fa-eye changePassword"></i>
                 </button>
             </div>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+            <input type="password" name="contraseña" class="form-control" id="password" placeholder="Ingrese su contraseña">
         </div>
         <?php if (!empty($_GET['error'])): ?>
             <div id="alertError" style="margin: auto;" class="alert alert-danger mb-2" role="alert">
