@@ -10,7 +10,7 @@ if (!empty($_SESSION['usuario'])) {
 
 <div class="fondo-login">
     <div class="icon">
-        <a href="/login/index.php">
+        <a href="/index.php">
             <i class="fa-solid fa-shield-dog dog-icon"></i>
         </a>
     </div>
@@ -50,7 +50,7 @@ if (!empty($_SESSION['usuario'])) {
         </div>
     </form>
     <div class="login col-3 mt-3">
-        Tienes una cuenta? <a href="signup.php" style="text-decoration: none;">Inicia Sesion</a>
+        Tienes una cuenta? <a href="/view/home/login.php" style="text-decoration: none;">Inicia Sesion</a>
     </div>
 </div>
 
